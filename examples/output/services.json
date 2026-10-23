@@ -1,0 +1,59 @@
+{
+  "SchemaVersion": 1,
+  "Scope": "Offline snapshot review; no services started, permissions changed or exploitation performed.",
+  "InputSha256": "dc0cfb4a6ed53b4bf1fd88b95924539ca1c3beb44ddd4c1be6a506a11061f7c0",
+  "Services": [
+    {
+      "Name": "SyntheticQuoted",
+      "Account": "NT AUTHORITY\\LocalService",
+      "Startup": "Auto",
+      "Executable": "C:\\Program Files\\Example\\service.exe",
+      "Confidence": "snapshot_only",
+      "AmbiguousCandidates": [],
+      "Findings": [],
+      "Evidence": "Synthetic, not a machine scan"
+    },
+    {
+      "Name": "SyntheticAmbiguous",
+      "Account": "LocalSystem",
+      "Startup": "Auto",
+      "Executable": "C:\\Program Files\\Example\\service.exe",
+      "Confidence": "snapshot_only",
+      "AmbiguousCandidates": [
+        "C:\\Program.exe"
+      ],
+      "Findings": [
+        {
+          "Rule": "UNQUOTED_EXECUTABLE_PATH",
+          "Priority": "high",
+          "Observation": "Unquoted spaced path with operator-supplied write evidence for an actual ambiguous candidate.",
+          "Recommendation": "Quote only the executable, preserve arguments, validate ACLs and test changes through normal change management. This observation is not proof of privilege escalation."
+        }
+      ],
+      "Evidence": "Synthetic candidate-write attestation; not an exploit"
+    },
+    {
+      "Name": "SyntheticUnknown",
+      "Account": "",
+      "Startup": "Manual",
+      "Executable": null,
+      "Confidence": "inconclusive_path",
+      "AmbiguousCandidates": [],
+      "Findings": [
+        {
+          "Rule": "PATH_UNRESOLVED",
+          "Priority": "review",
+          "Observation": "Missing path or environment variables require source-machine resolution.",
+          "Recommendation": "Collect the expanded executable path from the owning machine; do not expand using the analyst\u0027s environment."
+        },
+        {
+          "Rule": "ACCOUNT_UNKNOWN",
+          "Priority": "review",
+          "Observation": "Service account was not collected.",
+          "Recommendation": "Collect StartName before making a privilege-impact claim."
+        }
+      ],
+      "Evidence": "Synthetic unresolved environment"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+PASS quoted executable with arguments is not unquoted
+PASS spaces in arguments alone are not a path finding
+PASS unquoted candidates are modeled
+PASS unverified unquoted path is medium
+PASS matching candidate evidence raises priority
+PASS unrelated writable path is ignored
+PASS disabled service priority remains bounded
+PASS environment paths remain unresolved
+PASS relative command remains unresolved
+PASS unterminated quote remains unresolved
+PASS UNC executable supported
+PASS reported binary write is explicit evidence
+PASS unknown account not silently privileged
+PASS duplicate identities rejected
+Services: 1; findings for review: 1
+PASS CLI writes reports and high-risk exit code
+PASS malformed JSON has explicit failure
+16/16 passed
+Input/report error: The JSON value could not be converted to ServicePosture.ServiceSnapshot[]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.

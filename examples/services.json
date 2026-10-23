@@ -1,0 +1,5 @@
+[
+  {"Name":"SyntheticQuoted","PathName":"\"C:\\Program Files\\Example\\service.exe\" --safe","StartName":"NT AUTHORITY\\LocalService","StartMode":"Auto","Evidence":"Synthetic, not a machine scan"},
+  {"Name":"SyntheticAmbiguous","PathName":"C:\\Program Files\\Example\\service.exe --demo","StartName":"LocalSystem","StartMode":"Auto","WritableCandidatePaths":["C:\\Program.exe"],"Evidence":"Synthetic candidate-write attestation; not an exploit"},
+  {"Name":"SyntheticUnknown","PathName":"%EXAMPLE_ROOT%\\service.exe","StartName":"","StartMode":"Manual","Evidence":"Synthetic unresolved environment"}
+]
