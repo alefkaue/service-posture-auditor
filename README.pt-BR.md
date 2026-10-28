@@ -1,5 +1,7 @@
 # Windows Service Posture Auditor
 
+**Área do portfólio:** [Cloud/Infraestrutura](https://github.com/alefkaue#cloudinfraestrutura) · **Contexto:** Projeto pessoal
+
 Projeto pessoal em **C#**, desenvolvido com assistência de IA, exemplos sintéticos
 e testes executáveis. Análise defensiva offline; não executa exploração nem altera o ambiente analisado.
 

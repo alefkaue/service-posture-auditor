@@ -1,5 +1,7 @@
 # Windows Service Posture Auditor
 
+**Portfolio area:** [Cloud/Infrastructure](https://github.com/alefkaue#cloudinfraestrutura) · **Context:** Personal project
+
 **C# · offline defensive analysis · original personal portfolio project**
 
 Review exported Windows service command lines, accounts and operator-supplied write evidence without changing services.
